@@ -1,0 +1,17 @@
+Object oriented Programming
+
+1. Object -> It's an ENTITY consisting of STATE/PROPERTIES and BEHAVIOUR.
+2. Why object? -> To improve our programs's Readability, Managebility, Extensibility
+3. Class -> User defined data type, Object -> instance of a Class
+
+Access Modifiers : 3 types -> public, private, protected, default -> private
+
+Default constructor uses shallow copy
+
+Shallow Copy : accessing same memory while copying
+Deep Copy : different memory locations while copying
+
+DEstructor : for de-allocating memory
+
+statically object created -> destructor is automatically called
+dynamically object createxd -> destructor is called manually

@@ -1,0 +1,28 @@
+
+STL - Standard Template Library
+ => Library of Generic Classes and Functions
+
+COMPONENTS : 
+ 1. Containers
+    => objects which stores data
+    => use template classes
+    - TYPES OF CONTAINERS:
+        => sequence containers
+            -> stores data in linear fashion
+            -> Ex. vector, list, dequeue
+
+        => associative containers
+            -> direct access, fast access
+            -> Ex. set, multiset, map, multimap
+
+        => derived containers
+            -> real world modelling
+            -> Ex. stack, queue, priority queue
+ 
+ 2. Algorithms
+    => like sorting, searching etc., i.e, to process data using template functions 
+ 
+ 3. Iterators
+    => an object points to an element in a Containers
+    => handled just like pointers
+    => connects algorithms with containers

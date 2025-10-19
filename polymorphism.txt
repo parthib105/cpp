@@ -1,0 +1,15 @@
+
+POLYMORPHISM:
+  - one name and multiple form
+  - ex. function overloding, operator overloding
+
+TYPES:
+  1. compile time polymorphism
+        - object is bounded by function call during compilation
+          i.e., during compile time decision is made which function to be called
+        - This is achieved by Function overloding, Operator overloding 
+  
+  2. run time polymorphism
+        - Achieved by virtual functions
+        - Defer the function call after running the code
+        - after the run of code, it decides which function to be called according to pointers

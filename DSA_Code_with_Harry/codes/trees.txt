@@ -1,0 +1,141 @@
+                                        7
+                                      / | \
+                                     /  |  \
+                                    /   |   \
+                                   /    |    \
+                                  8     2    11
+                                 / \    |     \
+                                1   0   5      3
+                                              /
+                                             4  
+
+# Tree -> Non-Linear data structure := Ideal for representsting hierarchial data  
+# Array, Stack, Queue, Linked list -> Linear data structures
+
+----: TERMINOLOGIES :----
+
+Root               -> Topmost node
+Parent             -> Node which connects to the child
+Child              -> Node which is connected by another node is its child
+Leaf/External Node -> Nodes with no children
+Internal Node      -> Nodes with atleast one child
+Depth              -> No. of edges from root to the node
+height             -> No. of edges from node to deepest leaf.
+siblings           -> Nodes belonging to the same node. 
+degree             -> No. of nodes it is connected with or (No. of direct children)
+
+
+--------------------: BINARY TREE :--------------------
+
+-> It is a kind of tree such that degree of every node is 2 or less than 2 
+-> It is a kind of tree which has at most two children for all the nodes.
+
+
+                    8
+                   / \
+                  9   0
+                 / \  | \
+                2   3 4  6
+
+-> Hum 2, hamare 2
+ 
+# Tree is made up of nodes and edges
+# If it has n nodes => n-1 edges
+# Degree of a tree is the highest degree of a node among all the nodes present in the tree. 
+# BINARY TREE : Tree of degree 2;
+              : Nodes can have 0, 1 or 2 children
+
+
+--------------------: Types of BINARY TREE :-------------------- 
+
+1. Full or strict Binary Tree : All nodes have either 0 or 2 children
+
+2. Perfect Binary Tree : Internal nodes have 2 children and all nodes are on same level.
+
+3. Complete Binary Tree : All levels are completely filled except possibly the last level 
+                          and last level must have its keys as left as possbile
+
+4. Degenerate Tree : Every parent node has exactly one child.
+
+-------------------: Representation of a BINARY TREE :--------------------
+
+1. Array Representation : 
+
+                      7
+                     / \
+                    /   \
+                   11    2
+                  / \   / \
+                 7   1 11  9
+                /           \
+               2             11
+
+Inde   0  1  2  3  4  5  6  7  8  9  10 11 12 13 14
+Arr -> 7  11 2  7  1  11 9  2  N  N  N  N  N  N  11
+Required size 15 array
+N => NULL
+
+* Usually not used due to limited size of array
+
+2. Linked Representation :
+
+                      7
+                     / \
+                    /   \
+                   11    2
+                  / \   / \
+                 7   1 N   9
+
+using a representation similar to doubly linked list
+But it isn't a list since tree is a non-linear data structure
+
+-------------------: Traversal in a BINARY TREE :--------------------
+
+1. Preorder Traversal
+   Root -> Left subtree -> Right subtree
+
+2. Postorder Traversal
+   Left subtree -> Right subtree -> Root
+
+3. In order Traversal
+   Left subtree -> Root -> Right subtree
+
+-------------------: BINARY SEARCH TREE :--------------------
+
+It is a type of binary tree which follows the following properties
+
+# PROPERTIES : 
+1. All nodes of the left subtree are lesser
+2. All nodes of the right subtree are greater
+3. Left and Right subtrees are also BST
+4. There are no duplicate nodes
+5. Inorder traversal of a BST gives an ascending sorted array.
+
+-------------------: AVL TREE :--------------------
+
+# Why do we need an AVL Tree?
+=> * Almost all the operations in a bst are of order O(h), where h is 
+     height of the tree
+   * If we don't plan our tree properly, this height can get as high as n 
+     where n is the number of nodes in a BST (skewed tree).
+   * To guarantee an upper bound on O(log n) for all these operations, we use balanced trees.
+
+# What is an AVL Tree?
+=> * Height balanced binary search trees
+   * Height difference between heights of left and right subtrees for every node is <= 1
+   * Balanced factor = Height of right subtree - Height of left subtree
+   * Can be -1, 0 or 1 for a node to be balanced in a bst.
+   * Can be -1, 0 or 1 for all nodes of an AVL tree
+
+# Rotate operations
+=> We can peform rotate operations to balance a binary search tree such that the newly formed
+   tree satisfies all the properties of a BST. Following are two basic rotate operations:
+      -> Left Rotate w.r.t a node := Node is moved towards the left
+      -> Right Rotate w.r.t a node := Node is moved towards the right
+
+# Balancing a AVL tree after insertion
+=> In order to balance an AVL tree adter inserion, we can follow the following rules:
+   1. For a left-left Insertion - Right rotate once w.r.t the first imbalanced node
+   2. For a right-right Insertion - Left rotate once w.r.t the first imbalanced node
+   3. For a left-right Insertion - Left rotate once and then Right rotate once
+   4. For a right-left Insertion - Right rotate once and then Left rotate once

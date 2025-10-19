@@ -1,0 +1,103 @@
+# Array/Linked list & stacks -> Linear Data Structure
+# BST & AVL Trees -> Non-Linear Hierarchical Data Structure
+# Graph is an example of Non-Linear Data Structure
+# A Graph is a collection of nodes connected through edges
+
+-------------------- Formal Definition of Graph -------------------
+
+=> A Graph G = (V, E) is a collection of vertices and edges connecting these vertices
+=> Used to model Paths in a city, social networks, website backlinks, internal employee network etc.
+=> A vertex or node is one fundamental unit/entity of which graphs are formed
+=> AN edge is uniquely defined by its 2 endpoints
+=> Directed Edge - One way connection
+=> Undirected edge - Two way connection
+=> Directed Graph - All directed edges
+=> Undirected Graph - All undirected edges
+=> Degree - No. of edges connected to a node
+=> Indegree - No. of edges going out of the node
+=> Outdegree - No. of edges coming into the node
+
+* Graphs are used to model relationships between nodes
+* We can apply graph algorithms to suggest friend to people, calculate no. of mutual friends etc.
+* Other examples of graph include result of a web crawl for a website or for the entire world wide web, city routes etc.
+
+-------------------- Ways to represent a graph --------------------
+
+-> Adjacency list - Mark the nodes with the list of its neighbours
+-> Adjacency matrix - {A}_{ij} = 1 for an edge between i and j
+                    - {A}_{ij} = 0 otherwise
+-> Edge set - Store the pair of nodes/vertices connected with an edge. 
+            Eg. : {(0,1), (0,4), (1,4)}
+-> Other implementations to represent a graph also exist. For example, COmpact list representation,
+   cost adjacency list, cost adjacency matrix etc.
+
+# Adjacency List representation :
+
+                0
+               / \
+              /   \
+             2 --- 1
+            /     /
+           4     3
+     ___                   _
+    | 0 | -> 1 -> 2         |
+    | 1 | -> 0 -> 2 -> 3    |
+    | 2 | -> 0 -> 1 -> 4    | ---> all are linked lists
+    | 3 | -> 1              |
+    | 4 | -> 2              |
+    |___|                  _|
+
+# Adjacency Matrix representation :
+
+                0       1
+                 \     /
+                  \   /
+                    5
+                  / 
+                 /  
+                3 ---- 2
+                 \
+                  \
+                   4
+     ___ ___  ___  ___  ___  ___  ___
+    |___| 0 || 1 || 2 || 3 || 4 || 5 | 
+    | 0 | 0 || 0 || 0 || 0 || 0 || 1 |
+    | 1 | 0 || 0 || 0 || 0 || 0 || 1 |
+    | 2 | 0 || 0 || 0 || 0 || 0 || 0 | 
+    | 3 | 0 || 0 || 1 || 0 || 1 || 1 |
+    | 4 | 0 || 0 || 0 || 1 || 0 || 0 | 
+    | 5 | 1 || 1 || 0 || 1 || 0 || 0 |
+
+-------------------- Graph Traversal --------------------
+
+# Graph Traversal refers to the process of visiting (checking and/or updating) each vertex (node) in a graph
+# Sequence of steps known as Graph traversal algorithm can be used to traverse a graph
+# Two Algorithms of Graph Traversal are :
+  -> Breadth First Search (BFS) :-> queue data structure used
+  -> Depth First Search (DFS)   :-> stack data structure used
+
+=> Exploring a vertex
+
+* We have already looked into tree traversal algorithms
+* In a typical Graph Traversal algorithm, we traverse through (or visit) all the nodes of a graph and
+  add it to the collection of visited nodes
+* Exploring a vertex in a graph means visiting all the connected vertices 
+
+
+-------------------- Minimum Spanning Tree --------------------
+
+Subgraph : A subgraph of a graph G is a graph whose vertices and edges are subsets of the original graph G
+
+Connected Graph : It is a graph that is connected in the sense of a topological space, i.e., there is a path
+                  from any point to any other point in the graph. A graph that is not connected is said to be
+                  disconnected.
+
+Complete Graph : It is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge.
+
+Spanning Tree :
+    # A Connected subgraph 'S' of graph G(V, E) is said to be a Spanning tree of graph G iff 
+      1. All vertices of G must be present in S
+      2. No. edges in S should be V - 1
+
+No. of Spanning Trees for Complete Graphs :
+    A COMPLETE GRAPH has {n}^{n-2} Spanning Trees where n is the no. of vertices in the graph

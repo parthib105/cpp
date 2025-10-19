@@ -1,0 +1,44 @@
+Heap is a data structure, which is a Complete Binary Tree that comes with a heap order property
+
+-> Complete Binary Tree : * Every level is completely filled except the last level
+                          * nodes always added from the left
+
+# Max Heap : Child of every node is less than itself
+# Min Heap : Child of every node is more than itself
+
+---------- insertion ----------
+
+                60
+               /  \
+              /    \
+             50    40
+            /  \
+           /    \
+          30    20
+
+# Representation (using arrays) :    60  50  40  30  20
+                                 0   1   2   3   4   5 
+
+    => node -> i th index
+    => left child -> 2*i th index
+    => right child -> 2*i + 1 th index
+    => parent -> i/2 th index
+
+# steps to insertion :
+    1. Insert at end of the array
+    2. take it to the correct position i.e., check if its parent is greater than itself or not, if not the swap
+       arr[i] <=> arr[i/2]
+
+
+
+---------- Deletion ----------
+
+# steps to Deletion :
+    1. Swap the node to be deleted with the root node
+    2. Delete last node
+    3. Now propagate the node to be deleted to its correct position i.e., compare with its child
+
+---------- Heapify Algorithm ----------
+
+# leaf nodes lie from (n/2 + 1) to n and leaf nodes are already heaps
+# Heapify function takes the given node to its actual position in heap

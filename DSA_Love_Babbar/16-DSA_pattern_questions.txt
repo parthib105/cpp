@@ -1,0 +1,15 @@
+Pattern 1 : Sliding Window
+Pattern 2 : Two pointers
+Pattern 3 : Fast & Slow pointers
+Pattern 4 : Merge Intervals
+Pattern 6 : Cyclic sort
+Pattern 7 : Tree BFS
+Pattern 8 : DFS
+Pattern 9 : Two Heaps
+Pattern 10 : Subsets
+Pattern 11 : Modefied Binary Search
+Pattern 12 : Bitwise XOR
+Pattern 13 : Top 'K' elements
+Pattern 14 : K-way merge
+Pattern 15 : 0/1 knapsack (DP)
+Pattern 16 : Topological sort (graph)
