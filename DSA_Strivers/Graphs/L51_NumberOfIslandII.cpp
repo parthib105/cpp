@@ -4,7 +4,7 @@
     You have a 2D grid of ‘N’ rows and ‘M’ columns which are initially filled with water. You are given ‘Q’ queries each consisting of two integers ‘X’ and ‘Y’ and in each query operation, you have to turn the water at position (‘X’, ‘Y’) into a land. You are supposed to find the number of islands in the grid after each query.
 
     An island is a group of lands surrounded by water horizontally, vertically, or diagonally.
-    Detailed explanation ( Input/output format, Notes, Images )
+    
     Constraints:
 
     1 <= T <= 5
