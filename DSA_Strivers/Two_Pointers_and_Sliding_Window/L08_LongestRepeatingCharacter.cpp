@@ -40,15 +40,12 @@ int bruteForce(string s, int k)
         {
             hash[s[j] - 'A']++;
             maxRepeat = max(maxRepeat, hash[s[j] - 'A']);
+            
             int change = (j - i + 1) - maxRepeat;
             if (change <= k)
-            {
                 maxLen = max(maxLen, j - i + 1);
-            }
             else
-            {
                 break;
-            }
         }
     }
     return maxLen;
@@ -86,8 +83,7 @@ int characterReplacement(string s, int k)
             }
             l++;
         }
-        else if ((r - l + 1) - maxF <= k)
-        {
+        else if ((r - l + 1) - maxF <= k) {
             maxLen = max(maxLen, r - l + 1);
         }
     }
