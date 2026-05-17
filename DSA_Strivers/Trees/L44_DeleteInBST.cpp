@@ -117,8 +117,73 @@ void printLevelOrder(TreeNode<int> *root)
     }
 }
 
+TreeNode<int>* findLastRight(TreeNode<int>* root)
+{
+    if (!root->right)
+        return root;
+    return findLastRight(root->right);
+}
+
+TreeNode<int>* reconnect(TreeNode<int>* root)
+{
+    if (!root->left)
+        return root->right;
+    else if (!root->right)
+        return root->left;
+    
+    TreeNode<int>* rightChild = root->right;
+    TreeNode<int>* lastRight = findLastRight(root->left);
+    lastRight->right = rightChild;
+    return root->left;
+}
+
+TreeNode<int>* deleteNode(TreeNode<int>* root, int key)
+{
+    if (!root)
+        return nullptr;
+    if (root->data == key)
+        return reconnect(root);
+    
+    TreeNode<int>* dummy = root;
+    while (root)
+    {
+        if (root->data > key)
+        {
+            if (root->left && root->left->data == key)
+            {
+                root->left = reconnect(root->left);
+                break;
+            }
+            else
+                root = root->left;
+        }
+        else
+        {
+            if (root->right && root->right->data == key)
+            {
+                root->right = reconnect(root->right);
+                break;
+            }
+            else
+                root = root->right;
+        }
+    }
+    return dummy;
+}
+
 int main()
 {
-    
+    // root = [5,3,6,2,4,null,7], key = 3
+    vector<int> lo = {5,3,6,2,4,-1,7};
+    TreeNode<int>* root = buildTree(lo);
+
+    int key = 3;
+    printf("Level order before deletion: \n");
+    printLevelOrder(root);
+
+    root = deleteNode(root, key);
+
+    printf("\nLevel order after deletion: \n");
+    printLevelOrder(root);
     return 0;
 }
