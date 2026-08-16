@@ -5,3 +5,5 @@
 # 2. Whitelist a.exe and a.out in the root directory and any subdirectory
 **/a.exe
 **/a.out
+
+.vscode/
