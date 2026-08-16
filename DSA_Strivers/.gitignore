@@ -1,0 +1,7 @@
+# 1. Ignore all executable and output files across the repository
+*.exe
+*.out
+
+# 2. Whitelist a.exe and a.out in the root directory and any subdirectory
+**/a.exe
+**/a.out
